@@ -1,0 +1,31 @@
+mixin footer(data)
+	//- модификатор
+	+modif('footer', data.mod)
+
+	//- префикс
+	+prefix('footer', data.prefix)
+
+	//- атрибуты
+	- attr = data.attr || ''
+
+	//- div(class=`footer${pr}${mod}`)&attributes(attr)
+	footer.footer
+		.container
+			.footer__top
+				.footer__logo
+					img(src="assets/images/required/logo.svg" alt="HYBRID SK")
+
+				.footer__text
+					p Мы имеем безупречную деловую репутацию и будем рады видеть Вас в числе наших партнеров.
+
+				.footer__subscribe
+					p Подпишитесь на нашу рассылку, и будете в курсе наших последних новостей и цен.
+
+					form.footer__form(action="#" method="POST")
+						input(type="email" placeholder="* E-mail" required)
+						button(type="submit" class="elem-btn") ПОДПИСАТЬСЯ
+
+			.footer__bottom
+				p © 2022 HYBRID SK. Все права защищены.
+				p Разработано в 
+					a(href="https://stebnev-studio.ru" target="_blank") Stebnev-Studio

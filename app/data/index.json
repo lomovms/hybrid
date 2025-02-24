@@ -1,0 +1,31 @@
+{
+    "siteName": "Hybrid Example",
+    "header": {
+        "logo": "images/hybrid-sk-logo.png",
+        "menu": [
+            "Главная",
+            "Семена",
+            "О нас",
+            "Завод",
+            "Новости",
+            "Контакты"
+        ]
+    },
+    "breadcrumbs": {
+
+
+        "list": [{
+                "text": "Главная",
+                "href": "/"
+
+            },
+            {
+                "text": "Гибрид",
+                "href": "/gibrid"
+            },
+            {
+                "text": "Скап 252 СВ"
+            }
+        ]
+    }
+}

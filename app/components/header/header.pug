@@ -1,0 +1,38 @@
+mixin header(data)
+	//- модификатор
+	+modif('header', data.mod)
+
+	//- префикс
+	+prefix('header', data.prefix)
+
+	//- атрибуты
+	- attr = data.attr || ''
+
+	//- div(class=`header${pr}${mod}`)&attributes(attr)
+	header.header
+		.container
+			.header__row
+				.header__logo
+					img(src="assets/images/required/logo.svg", alt="HYBRID SK")
+
+				nav.header-nav
+					ul.header-nav__list
+						li.header-nav__item
+							a.header-nav__link.active(href="#") ГЛАВНАЯ
+						li.header-nav__item
+							a.header-nav__link(href="#") СЕМЕНА
+						li.header-nav__item
+							a.header-nav__link(href="#") О НАС
+						li.header-nav__item
+							a.header-nav__link(href="#") ЗАВОД
+						li.header-nav__item
+							a.header-nav__link(href="#") НОВОСТИ
+						li.header-nav__item
+							a.header-nav__link(href="#") КОНТАКТЫ
+
+				.header__contacts
+					span.header__phone 8 800 250-64-69
+					a.header__order-call(href="#") Заказать звонок
+					.header__cart
+						i.icon.icon--basket
+						span.header__cart-count 0

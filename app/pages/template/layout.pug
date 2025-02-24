@@ -1,0 +1,44 @@
+block variables
+include ../helpers/mixins
+include ../../components/menu/menu
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/popup/popup
+
+doctype html
+html(lang="RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(content="" name="author")
+		meta(content="" name="description")
+		meta(content="" name="keywords")
+		meta(content="width=device-width, initial-scale=1" name="viewport")
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		//- favicon block start
+		//- favicon block end
+
+	block head
+
+	body
+		.page
+			+header({
+				menu: menuHeader
+			})
+
+			main.main
+				block content
+
+			//- block footer
+			+footer({})
+
+
+			//- block popup
+			+popup({})

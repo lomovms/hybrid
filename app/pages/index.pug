@@ -1,0 +1,135 @@
+extends template/layout
+include ../components/breadcrumbs/breadcrumbs
+
+block variables
+	- var title = 'Hybrid'
+
+block content
+	.container
+		//- h1 Тест
+		//- +menu(menuHeader)
+		//- +img('example/preview.jpg', `lazyload`)
+
+		//- svg
+		//- 	use(xlink:href="/assets/images/required/sprite.svg#accordion")
+		section.section-breadcrumbs
+			+breadcrumbs(breadcrumbs)
+		section.section-card.grid
+			.grid__item.grid__item-12
+				.section-card__top.grid.grid__item.grid__item-10--xl.grid__item-12--lg.grid__item-12--sm.row.row-sb
+					.grid__item.grid__item-1.hidden-lg.hidden-md.hidden-sm.hidden-xs.hidden-xs-small
+					.block-left.grid__item.grid__item-6--xl.grid__item-6--lg.grid__item-6--md.grid__item-7--sm.grid__item-12--xs
+						.gallery
+							.swiper.mySwiper2(style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff")
+								.swiper-wrapper.popup-gallery
+									- for (let i = 1; i <= 4; i++)
+										.swiper-slide
+											a.gallery__img(href=`assets/images/required/product/img${i}.jpg` title=`Фото ${i}`)
+												img(src=`assets/images/required/product/img${i}.jpg`)
+												.gallery__shild 
+													p
+														span C
+														| 252 
+							.swiper.mySwiper1(thumbsSlider="")
+								.swiper-wrapper
+									- for (let i = 1; i <= 4; i++)
+										.swiper-slide
+											.gallery__thumbs
+												img(src=`assets/images/required/product/img${i}.jpg`)
+
+					.category-item__row.grid__item.grid__item-5--xl.grid__item-6--lg.grid__item-6--md.grid__item-5--sm
+						.product
+							h1.product__title Краснодарский 452 АМВ
+
+							p.product__text
+								| Среднеранний, простой гибрид зернового направления.
+								| Вегетационный период 110 дней. Оригинатор – ООО "Агроплазма".
+								| Внесен в государственный реестр в 2020 г. Зерно желтое, зубовидное.
+								| Высота стебля до 300 см. Высота крепления початка 80-90 см.
+								| Масса 1000 зерен 295-302 г. Выход зерна при обмолоте – 80-82%.
+
+							.product__labels
+								span.product__label ФАО: 194
+								span.product__label Назначение: зерно
+								span.product__label Группа спелости: раннеспелый
+
+							.product__treatment
+								label(for="treatment") Дополнительная обработка
+								select#treatment
+									option(value="1") Обработка 1
+									option(value="2") Обработка 2
+									option(value="3") Обработка 3
+
+							.product__prices
+								del.product__old-price 4 200, 00 ₽
+								span.product__price 3 000, 00 ₽
+
+							.product__actions
+								.product__quantity
+									button.minus-btn(type="button" name="button")
+										i.icon.icon--minus
+									input(type="text" name="name" value="1")
+									button.plus-btn(type="button" name="button")
+										i.icon.icon--plus
+								span.product__units п.е.
+								button(type="button" class="elem-btn") ДОБАВИТЬ В ЗАЯВКУ
+
+				.grid.category-row.grid__item.grid__item-10--xl
+					
+					.section-product-tabs.grid__item.grid__item-12.grid__item-10--xl
+						
+						.product-tabs.grid
+							ul.product-tabs__list
+								li.product-tab.active(data-tab="recommendations") Рекомендации агроному
+								li.product-tab(data-tab="regions") Регионы допуска
+								li.product-tab(data-tab="processing") Обработка
+								li.product-tab(data-tab="packaging") Упаковка
+								li.product-tab(data-tab="delivery") Доставка
+
+						.product-tab-content.grid
+							.product-tab-pane(data-tab="recommendations" class="active")
+
+
+								p Гибрид СКАП 251 СВ - новейший гибрид российской селекции, созданный на базе НЦ "Сколково". В 2020 г. заводом HYBRID SK произведена первая промышленная партия семян данного гибрида. Полевые испытания гибрида проводились  в 2018-2019 годах на базе крупнейших российских агрохолдингов.
+									br
+									br
+									| По влагоотдаче  и урожайности показал себя на уровне лучших импортных гибридов. Стабильно входил в пятерку лидеров.
+									br
+									br
+									| Оптимальные регионы для выращивания: Воронежская, Белгородская, Курская, Липецкая, Орловская области.
+									br
+									br
+									| Урожайность  зерна при 14% влажности
+
+
+
+								h3 2018 г.
+								ul.product__list
+									li  МИРАТОРГ, Белгородская обл., п. Ивня – 113,6 ц/га
+									li  ЧЕРКИЗОВО, Воронежская обл., с. Кучугуры – 100,3 ц/га
+									li  ОБОЯНСКОЕ ГСУ, Курская область – 146,1 ц/га
+
+
+								h3 2019 г.
+								ul.product__list
+									li  ДОН, Воронежская обл., с. Устье – 147,8 ц/га
+									li  МИРАТОРГ, Белгородская обл., п. Ивня – 94,5 ц/га
+									li  ОБОЯНСКОЕ ГСУ, Курская область – 146,1 ц/га
+									li  ЧЕРКИЗОВО, Воронежская обл., с. Кучугуры – 100,3 ц/га
+
+								p Устойчив к стеблевой гнили и пузырчатой головне.
+
+
+							.product-tab-pane(data-tab="regions" )
+								p Текст описания товара.
+
+							.product-tab-pane(data-tab="processing")
+								p Текст описания товара.
+
+							.product-tab-pane(data-tab="packaging")
+								p Текст описания товара.
+
+							.product-tab-pane(data-tab="delivery")
+								p Текст описания товара.
+
+						
